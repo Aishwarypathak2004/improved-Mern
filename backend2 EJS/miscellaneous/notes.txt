@@ -1,0 +1,63 @@
+
+
+### 🧠 **Object Prototypes in JavaScript — Quick Notes**
+
+1. **Definition**:
+   An **object prototype** is a **blueprint** from which other objects inherit properties and methods.
+
+2. **Prototype Chain**:
+
+   * Every JavaScript object has a hidden property `[[Prototype]]`, accessible via `__proto__`.
+   * This links the object to another object (its prototype).
+   * This forms a **prototype chain** — JS checks the object, then its prototype, and so on.
+
+3. **How It Works**:
+
+   ```js
+   let person = {
+     greet: function () {
+       console.log("Hello!");
+     }
+   };
+
+   let student = Object.create(person);
+   student.name = "Arjun";
+
+   student.greet(); // Inherited from person
+   ```
+
+4. **Constructor Function + `prototype`**:
+
+   ```js
+   function Car(brand) {
+     this.brand = brand;
+   }
+
+   Car.prototype.drive = function () {
+     console.log(this.brand + " is driving");
+   };
+
+   let myCar = new Car("Tesla");
+   myCar.drive(); // Tesla is driving
+   ```
+
+5. **Built-in Prototypes**:
+
+   * Arrays, strings, numbers — all inherit methods via their prototypes.
+
+   ```js
+   let arr = [1, 2, 3];
+   arr.push(4); // push() is from Array.prototype
+   ```
+
+6. **Key Terms**:
+
+   * `__proto__`: Accesses an object’s prototype (not recommended for production).
+   * `prototype`: Property of constructor functions used when creating new instances.
+
+---
+
+✅ **TL;DR**:
+Prototypes let JavaScript objects inherit features from other objects, enabling **reusability**, **method sharing**, and **efficient memory use**.
+
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All posts</title>
+</head>
+<body>
+    <div style="width: 600px; height: 100%; text-align: center; background-color: goldenrod; border: 10px solid black; align-items: center; padding-left: 50%; ">
+    <h1 style="background-color: #800000; height: 50px; width: 250px; border: 5px solid black;color: azure;">Quora Posts</h1>
+    <% for(post of posts) {%>
+        <div style="height: 400px; width: 400px; border: 10px solid black; text-align: center; ">
+            <h1>@ <%= post.username %></h1>
+            <h3> content: <%= post.content %></h3>  <a style="height: 100px; width: 400px; color: azure; background-color: blue; font-weight: bolder; border: 2px solid black; text-decoration: none;" href="http://localhost:8080/posts/<%=post.id%>/edit">Edit content</a>
+           <br> <br> <a style="height: 100px; width: 400px; color: azure; background-color: blue; font-weight: bolder; border: 2px solid black; text-decoration: none;" href="http://localhost:8080/posts/<%=post.id%>">See seperately</a>
+           <br> 
+           <form method="post" action="/posts/<%=post.id%>?_method=DELETE">
+            <button style="background-color: red; color: black; border: 2px solid black;">Delete Post</button>
+           </form>
+            
+        </div>
+        <br>
+        <br>
+
+         <% } %>
+
+         <a href="http://localhost:8080/posts/new" style="width: 400px; border: 10px solid black;margin-bottom: 20px; font-weight: bolder;"> Create new Post</a>
+</div>
+
+    
+</body>
+</html>

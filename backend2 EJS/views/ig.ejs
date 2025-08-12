@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insta EJs</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body style="background-color: palevioletred;">
+    <div style=" height: 400px;width: 400px; margin: auto; text-align: center; border: 10px solid azure; border-radius: 20%; display: flex;justify-content: center;">
+    <div style="height: 200px; width: 200px; border: 10px solid azure;border-radius: 50%; margin: auto;"></div>
+   
+</div>
+    <br>
+   <div style="text-align: center; height: 100px; width: 400px; border: 10px solid azure; border-radius: 20%; margin: auto; ">
+     <h3 style=" font-family:serif;"> This account belongs to <%= data.name %></h1>
+            <button style="background-color: grey; color: aquamarine; font-weight: bold; border-radius: 20%;">Follow</button>
+            <button style="background-color: grey; color: aquamarine; font-weight: bold; border-radius: 20%;">Message</button>
+            <br><br>
+            <p style="color: azure;font-weight: bolder;">Followers: <%=data.followers%>&nbsp;&nbsp;&nbsp;&nbsp;Following: <%=data.following%></p>
+
+           
+    
+   </div>
+   <br>
+   <hr>
+   <br>
+   <% for(let post of data.posts) {%>
+    <img src="<%=post.image%>" alt="some image">
+    <p style="color: azure;font-weight: bolder;">Likes: <%= post.likes %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Comments: <%= post.comments %></p>
+    <% } %>
+
+<script src="/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+body{
+    text-align: center;
+}
+#d1{
+    height: 100px;
+    width: 500px;
+    border: 1px solid black;
+    margin: auto;
+}

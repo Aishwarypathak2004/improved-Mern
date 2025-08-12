@@ -1,0 +1,7 @@
+// Generally there are two tyeps of package installation 
+1 loacal : it means if a package is installed locally can only be used in the folder they have installed in.
+2. global : It means if a package is installed globally! we can use it anywhere within the project no mater which folder of the project it is installed in 
+generally  we install package locally because it is considered a good practise but for knowledge the command for global installation of a package is
+npm install -g <Package name>
+and then we gotta link the package by 
+npm link <package name>

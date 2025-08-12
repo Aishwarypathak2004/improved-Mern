@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show ther single post</title>
+</head>
+<body>
+    <div style="background-color: maroon; height: 1000px; width: 1000px; display: flex; justify-content: center;">
+        <div style="width: 400px; height: 400px;  background-color: bisque; border: 10px solid black; text-align: center; margin-top: 250px; ">
+    <h2>Here is the detailed Post</h2>
+    <hr>
+    <p style="font-weight: bolder;">Post id: <%= post.id%></p>
+    <br>
+    <h3> This post belongs to <%= post.username%></h3>
+    <h4>Content : <%= post.content%></h4>
+    </div>
+    </div>
+    
+</body>
+</html>
