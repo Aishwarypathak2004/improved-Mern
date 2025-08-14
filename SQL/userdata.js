@@ -43,6 +43,9 @@ app.get("/", (req, res) => {
     res.send("some problem");
   }
 });
+app.post("/user", (req, res) => {
+  res.redirect("/user")
+})
 
 // Route: Display all users
 app.get("/user", (req, res) => {

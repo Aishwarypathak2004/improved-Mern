@@ -4,9 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Show Row</title>
-    <style>
-        body{display: flex;}
-        table,tr,td{ border:  1px solid black;}
+     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5; /* FB background */
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h2 {
+            color: #1877f2; /* FB blue */
+            margin-bottom: 15px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 90%;
+            max-width: 1000px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        th, td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #dddfe2;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        th {
+            background-color: #1877f2;
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:hover {
+            background-color: #f5f6f7;
+        }
+
+        button {
+            background-color: #1877f2;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            font-size: 13px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #165dc4;
+        }
+
+        /* Delete button styled in red */
+        form[action*="DELETE"] button {
+            background-color: #e41e3f;
+        }
+
+        form[action*="DELETE"] button:hover {
+            background-color: #c41632;
+        }
+
+        /* Add new user form */
+        form[method="get"] {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        form[method="get"] h2 {
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>

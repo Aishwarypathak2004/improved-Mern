@@ -4,11 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Total users  </title>
+     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5; /* FB background */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        h2 {
+            color: #1877f2; /* FB blue */
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            background-color: #1877f2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #165dc4;
+        }
+    </style>
 </head>
 <body>
     <h2>The total no. of users are: <%=count%></h2>
-     <br>
+     <br><form method="get" action="http://localhost:8080/user">
      <button>join us</button>
+     </form>
 
     
 </body>
