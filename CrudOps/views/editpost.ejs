@@ -4,20 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit post</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af, #515bd4);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+
+        .edit-container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.85);
+            border: 8px solid #000;
+            border-radius: 20px;
+            padding: 20px;
+            width: 320px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .edit-container h2 {
+            color: #000;
+            border: 2px solid #000;
+            padding: 8px;
+            margin: 0 0 15px;
+            font-size: 18px;
+            background: linear-gradient(90deg, #f58529, #dd2a7b, #8134af);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: bold;
+        }
+
+        .edit-container p {
+            color: #000;
+            border: 2px solid #000;
+            font-weight: bold;
+            padding: 5px;
+            margin: 10px 0;
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+
+        textarea {
+            height: 200px;
+            width: 200px;
+            background-color: azure;
+            border-radius: 8px;
+            padding: 8px;
+            border: 2px solid #ccc;
+            font-size: 14px;
+            resize: none;
+        }
+
+        button {
+            background: linear-gradient(90deg, #f58529, #dd2a7b, #8134af);
+            color: white;
+            font-weight: bold;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            font-size: 14px;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body>
-    <div style=" text-align: center; background-color: gold; border: 10px solid black;border-radius: 10%;">
-        <h2 style=" height: 30px;;color: black; border: 2px solid black;">Edit Your Post Content</h2>
+    <div class="edit-container">
+        <h2>Edit Your Post Content</h2>
         
-        <p style="color: black; border: 2px solid black; font-weight: bolder;">Post id: <%= post.id %></p>
-        <p style="color: black; border: 2px solid black; font-weight: bolder;">Post Username: <%= post.username %></p>
+        <p>Post id: <%= post.id %></p>
+        <p>Post Username: <%= post.username %></p>
+        
         <form method="post" action="/posts/<%=post.id%>?_method=PATCH">
-            <textarea name="content" style="height: 200px; width: 200px;background-color: azure;"> <%= post.content %></textarea>
+            <textarea name="content"><%= post.content %></textarea>
             <br><br>
-            <button style="background-color: blue; color: azure; font-weight: bolder; border: 2px solid white;">Submit</button>
+            <button type="submit">Submit</button>
         </form>
-
     </div>
-    
 </body>
 </html>

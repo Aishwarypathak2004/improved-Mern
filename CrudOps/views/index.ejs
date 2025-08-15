@@ -4,29 +4,133 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All posts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af, #515bd4);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 600px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            border: 10px solid black;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .container h1 {
+            background: linear-gradient(90deg, #f58529, #dd2a7b, #8134af);
+            height: 50px;
+            width: 250px;
+            border: 5px solid black;
+            color: white;
+            margin: 0 auto 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+        .post {
+            height: auto;
+            width: 400px;
+            border: 8px solid black;
+            margin: 0 auto 30px;
+            padding: 15px;
+            border-radius: 15px;
+            background: white;
+        }
+
+        /* Username styling */
+        .username {
+            font-size: 20px;
+            font-weight: bold;
+            color: black;
+            margin-bottom: 10px;
+        }
+
+        /* Post content styling */
+        .post h3 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        /* Buttons and Links */
+        .post a {
+            display: block;
+            height: 40px;
+            width: 100%;
+            color: white;
+            background: linear-gradient(90deg, #f58529, #dd2a7b, #8134af);
+            font-weight: bold;
+            border: 2px solid black;
+            text-decoration: none;
+            line-height: 40px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            transition: transform 0.2s ease;
+        }
+
+        .post a:hover {
+            transform: scale(1.05);
+        }
+
+        .post button {
+            background-color: red;
+            color: black;
+            border: 2px solid black;
+            padding: 8px 15px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .post button:hover {
+            transform: scale(1.05);
+        }
+
+        .create-link {
+            display: block;
+            width: 400px;
+            border: 10px solid black;
+            font-weight: bold;
+            margin: 0 auto;
+            padding: 10px;
+            background: linear-gradient(90deg, #f58529, #dd2a7b, #8134af);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            transition: transform 0.2s ease;
+        }
+
+        .create-link:hover {
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body>
-    <div style="width: 600px; height: 100%; text-align: center; background-color: goldenrod; border: 10px solid black; align-items: center; padding-left: 50%; ">
-    <h1 style="background-color: #800000; height: 50px; width: 250px; border: 5px solid black;color: azure;">Quora Posts</h1>
-    <% for(post of posts) {%>
-        <div style="height: 400px; width: 400px; border: 10px solid black; text-align: center; ">
-            <h1>@ <%= post.username %></h1>
-            <h3> content: <%= post.content %></h3>  <a style="height: 100px; width: 400px; color: azure; background-color: blue; font-weight: bolder; border: 2px solid black; text-decoration: none;" href="http://localhost:8080/posts/<%=post.id%>/edit">Edit content</a>
-           <br> <br> <a style="height: 100px; width: 400px; color: azure; background-color: blue; font-weight: bolder; border: 2px solid black; text-decoration: none;" href="http://localhost:8080/posts/<%=post.id%>">See seperately</a>
-           <br> 
-           <form method="post" action="/posts/<%=post.id%>?_method=DELETE">
-            <button style="background-color: red; color: black; border: 2px solid black;">Delete Post</button>
-           </form>
-            
-        </div>
-        <br>
-        <br>
-
-         <% } %>
-
-         <a href="http://localhost:8080/posts/new" style="width: 400px; border: 10px solid black;margin-bottom: 20px; font-weight: bolder;"> Create new Post</a>
-</div>
-
-    
+    <div class="container">
+        <h1>Quora Posts</h1>
+        <% for(post of posts) {%>
+            <div class="post">
+                <div class="username">@ <%= post.username %></div>
+                <h3>content: <%= post.content %></h3>  
+                <a href="http://localhost:8080/posts/<%=post.id%>/edit">Edit content</a>
+                <a href="http://localhost:8080/posts/<%=post.id%>">See separately</a>
+                <form method="post" action="/posts/<%=post.id%>?_method=DELETE">
+                    <button type="submit">Delete Post</button>
+                </form>
+            </div>
+        <% } %>
+        <a class="create-link" href="http://localhost:8080/posts/new">Create new Post</a>
+    </div>
 </body>
 </html>

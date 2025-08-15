@@ -4,17 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creating new post</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af, #515bd4);
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        form {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            border: 8px solid black;
+            width: 350px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        input, textarea {
+            width: 90%;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #dd2a7b;
+            box-shadow: 0 0 5px rgba(221, 42, 123, 0.7);
+        }
+
+        textarea {
+            height: 150px;
+            resize: none;
+        }
+
+        button {
+            background: linear-gradient(90deg, #f58529, #dd2a7b, #8134af);
+            color: white;
+            font-weight: bold;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-size: 14px;
+            transition: transform 0.2s ease;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body>
     <form method="post" action="/posts">
-        <input  name="username" placeholder="Enter username" style="height: 20px; width: auto;">
-        <br>
+        <input name="username" placeholder="Enter username">
         <br><br>
-        <textarea placeholder="Wrte your post" name="content"></textarea>
+        <textarea placeholder="Write your post" name="content"></textarea>
         <br>
-        <br>
-        <button>Upload</button>
+        <button type="submit">Upload</button>
     </form>
-    
 </body>
 </html>
