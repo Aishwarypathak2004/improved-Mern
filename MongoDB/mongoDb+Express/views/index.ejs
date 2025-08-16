@@ -4,19 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All CHAT SECTION</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <h2>Home Page</h2>
+    <br>
+    <form method="get" action="/chats/new">
+        <button>New chat</button>
+    </form>
+    <br>
 
     <% for (let chat of chats){%>
 <div class="chatt">
-    <p>From: <%=chat.from%></p>
+    <p >From: <%=chat.from%></p>
+    <br>
     <div class="msg">
-     <p>===> <%=chat.msg%></p>
+     <p><%=chat.msg%></p>
+     <form method="get" action="/chats/<%=chat._id%>/edit">
+        <button>Edit</button>
+     </form>
      </div>
+     <br>
       <p>Recived by: <%=chat.to%></p>
+      
+      <br>
+      <p><%=chat.created_at.toString().split(" ")[4]%></p>
+      <p><%=chat.created_at.toString().split(" ").slice(0,4).join(" ")%></p>
+    <br>
+           <form method="post" action="/chats/<%=chat._id%>?_method=DELETE">
+        <button>Delete</button>
+     </form>
 </div>
+<br><br>
 <%}%>
     
 </body>
