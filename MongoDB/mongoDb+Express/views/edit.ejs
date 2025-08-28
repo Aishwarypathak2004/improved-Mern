@@ -14,7 +14,7 @@
 }
 
 body {
-  background: linear-gradient(135deg, #f093fb, #f5576c);
+  background: linear-gradient(135deg, #7dc5ff, #1566b3);
   color: #fff;
   min-height: 100vh;
   display: flex;
@@ -22,7 +22,9 @@ body {
   align-items: center;
   padding: 20px;
 }
-
+.above{
+  display: inline-block;
+}
 /* Card container */
 form {
   background: rgba(255, 255, 255, 0.1);
@@ -100,11 +102,12 @@ button:active {
     </style>
 </head>
 <body>
-    <h3>Edit your chat: <%=mainchat._id%></h2>
+   <div class="above"> <h3>Edit your chat: <%=mainchat._id%></h2><br><br>
         <p>This chat was sent from <b><%=mainchat.from%></b> to <b><%=mainchat.to%></b></p>
-        <form method="post" action="/chats/<%=mainchat._id%>?_method=PUT">
+       <form method="post" action="/chats/<%=mainchat._id%>?_method=PUT">
             <textarea name="msg"><%=mainchat.msg%></textarea>
             <button>Edit</button>
-        </form>
+        </form></div>
+       
 </body>
 </html>
